@@ -61,7 +61,7 @@ app.use((err, req, res, next) => {
 // Conectar a MongoDB
 async function connectDB() {
     try {
-        await mongoose.connect('mongodb://localhost:27017/user_prueba');
+        await mongoose.connect('mongodb+srv://root:root@aplicacionesweb.6cvkiyx.mongodb.net/user_prueba');
         console.log('Conexión a MongoDB exitosa');
     } catch (error) {
         console.error('Error al conectar a MongoDB', error);
