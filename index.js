@@ -27,6 +27,7 @@ async function connectDB() {
 }
 connectDB();
 
+// Ruta para insertar un corredor
 router.post("/", async (req, res) => {
 	const body = req.body;
 	const respuesta = await ModelUser.create(body)
@@ -39,6 +40,7 @@ router.post("/", async (req, res) => {
 		});
 });
 
+// Ruta para obtener todos los corredores
 router.get("/", async (req, res) => {
 	const respuesta = await ModelUser.find({})
 		.then((data) => {
@@ -49,6 +51,7 @@ router.get("/", async (req, res) => {
 		});
 });
 
+// Ruta para obtener un corredor por ID
 router.get("/:id", async (req, res) => {
 	const id = req.params.id;
 	if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -63,6 +66,7 @@ router.get("/:id", async (req, res) => {
 		});
 });
 
+// Ruta para actualizar un corredor
 router.put("/:id", async (req, res) => {
 	const body = req.body;
 	const id = req.params.id;
@@ -80,6 +84,7 @@ router.put("/:id", async (req, res) => {
 		});
 });
 
+// Ruta para eliminar un corredor
 router.delete("/:id", async (req, res) => {
 	const id = req.params.id;
 	if (!mongoose.Types.ObjectId.isValid(id)) {
