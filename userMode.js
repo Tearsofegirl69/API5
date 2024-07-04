@@ -4,10 +4,16 @@ const userSchema = new mongoose.Schema(
       name: {
         type: String
       },
-      ingredientes: {
+      apellido: {
         type: String
       },
-      pasos: {
+      edad: {
+        type: Number
+      },
+      correo: {
+        type: String
+      },
+      sexo: {
         type: String
       }
     },
